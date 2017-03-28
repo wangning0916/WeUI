@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<title>dialog</title>
+	<link rel="stylesheet" type="text/css" href="css/weui.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body ontouchstart>
+	<div id="container">
+		<a href="javascript:void(0)" class="weui_btn weui_btn_primary" id="showDialog1">弹框一</a>
+		<a href="javascript:void(0)" class="weui_btn weui_btn_primary" id="showDialog2">弹框二</a>
+		<!-- 弹框样式1 -->
+		<div class="weui_dialog_confirm" id="dialog1" style="display:none;">
+			<div class="weui_mask"></div>
+			<div class="weui_dialog">
+				<div class="weui_dialog_hd">弹窗标题</div>
+				<div class="weui_dialog_bd">弹窗内容</div>
+				<div class="weui_dialog_ft">
+					<a href="javascript:void(0)" class="weui_btn_dialog default">取消</a>
+					<a href="javascript:void(0)" class="weui_btn_dialog primary">确定</a>
+				</div>
+			</div>
+		</div>
+		<!-- 弹框样式2 -->
+		<div class="weui_dialog_alert" id="dialog2" style="display:none;">
+			<div class="weui_mask"></div>
+			<div class="weui_dialog">
+				<div class="weui_dialog_hd">弹窗标题</div>
+				<div class="weui_dialog_bd">弹窗内容</div>
+				<div class="weui_dialog_ft">
+					<a href="javascript:void(0)" class="weui_btn_dialog primary">确定</a>
+				</div>
+			</div>
+		</div>	
+	</div>		
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#container').on('click', '#showDialog1', function () {
+                $('#dialog1').show().on('click', '.weui_btn_dialog', function () {
+                    $('#dialog1').off('click').hide();
+                });
+            }).on('click', '#showDialog2', function () {
+                $('#dialog2').show().on('click', '.weui_btn_dialog', function () {
+                    $('#dialog2').off('click').hide();
+                });
+            });
+	});
+</script>
+</html>

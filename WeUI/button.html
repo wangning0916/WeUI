@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<title>button</title>
+	<link rel="stylesheet" type="text/css" href="css/weui.css">
+</head>
+
+<!-- 要触发按钮的active态 在body上加ontouchstart全局触发 -->
+<body ontouchstart>	
+	<!-- 按钮常见的操作场景：确定、取消、警示 每种场景都有自己的置灰态weui_btn_disabled -->
+	<!-- 操作场景 确定 -->
+	<button class="weui_btn weui_btn_primary">确定</button>
+	<button class="weui_btn weui_btn_primary weui_btn_disabled">确定</button>
+	<!-- 操作场景 取消 -->
+	<button class="weui_btn weui_btn_default">取消</button>
+	<button class="weui_btn weui_btn_default weui_btn_disabled">取消</button>
+	<!-- 操作场景 确定 -->
+	<button class="weui_btn weui_btn_warn">警告</button>
+	<button class="weui_btn weui_btn_warn weui_btn_disabled">警告</button>
+
+	<!-- 镂空按钮(背景颜色为白色，边框线的颜色不同weui_btn_plain_XXX)-->
+	<button class="weui_btn weui_btn_plain_primary">确定</button>
+	<button class="weui_btn weui_btn_plain_default">取消</button>
+
+	<!-- 按钮尺寸客户端webview里的按钮尺寸有两类，默认宽度100%，小型按钮宽度自适应，两边边框与文本间距0.75em -->
+	<button class="weui_btn weui_btn_primary weui_btn_mini">确定</button>
+	<button class="weui_btn weui_btn_default weui_btn_mini">取消</button>
+	
+</body>
+</html>

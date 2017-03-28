@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<title>toast</title>
+	<link rel="stylesheet" type="text/css" href="css/weui.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body ontouchstart>
+	<div id="container">
+		<a href="javascript:void(0)" class="weui_btn weui_btn_primary" id="showToast1">弹框一</a>
+		<a href="javascript:void(0)" class="weui_btn weui_btn_primary" id="showToast2">弹框二</a>
+		<!-- 弹框样式1 -->
+		<div id="toast1" style="display:none;">
+			<div class="weui_mask_transparent"></div>
+			<div class="weui_toast">
+				<div class="weui_icon_toast"></div>
+				<div class="weui_toast_content">已完成</div>				
+			</div>
+		</div>
+		<!-- 弹框样式2 -->
+		<div class="weui_loading_toast" id="toast2" style="display:none;">
+			<div class="weui_mask_transparent"></div>
+			<div class="weui_toast">
+				<div class="weui_loading">
+					<div class="weui_loading_leaf weui_loading_leaf_0"></div>
+					<div class="weui_loading_leaf weui_loading_leaf_1"></div>
+					<div class="weui_loading_leaf weui_loading_leaf_2"></div>
+					<div class="weui_loading_leaf weui_loading_leaf_3"></div>
+					<div class="weui_loading_leaf weui_loading_leaf_4"></div>
+					<div class="weui_loading_leaf weui_loading_leaf_5"></div>
+					<div class="weui_loading_leaf weui_loading_leaf_6"></div>
+					<div class="weui_loading_leaf weui_loading_leaf_7"></div>
+					<div class="weui_loading_leaf weui_loading_leaf_8"></div>
+					<div class="weui_loading_leaf weui_loading_leaf_9"></div>
+				</div>
+				<div class="weui_toast_content">加载中</div>				
+			</div>
+		</div>	
+	</div>		
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#container").on('click', '#showToast1', function(event) {
+			$("#toast1").show();
+			setTimeout(function(){
+				$("#toast1").hide();
+			},3000);
+		}).on('click', '#showToast2', function(event) {
+			$("#toast2").show();
+			setTimeout(function(){
+				$("#toast2").hide();
+			},3000);
+		});
+	});
+</script>
+</html>

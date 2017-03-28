@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<title>process</title>
+	<link rel="stylesheet" type="text/css" href="css/weui.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<!-- 要触发按钮的active态 在body上加ontouchstart全局触发 -->
+<body ontouchstart>	
+	<div style="margin-top:20px;padding:20px;">
+		<div class="weui_progress">
+			<div class="weui_progress_bar">
+				<div class="weui_progress_inner_bar js_progress" style="width:0%"></div>
+			</div>
+			<a href="javascript:void(0)" class="weui_progress_opr">
+				<i class="weui_icon_cancel"></i>
+			</a>
+		</div>
+		<br>
+		<div class="weui_progress">
+			<div class="weui_progress_bar">
+				<div class="weui_progress_inner_bar js_progress" style="width:50%"></div>
+			</div>
+			<a href="javascript:void(0)" class="weui_progress_opr">
+				<i class="weui_icon_cancel"></i>
+			</a>
+		</div>
+		<br>
+		<div class="weui_progress">
+			<div class="weui_progress_bar">
+				<div class="weui_progress_inner_bar js_progress" style="width:80%"></div>
+			</div>
+			<a href="javascript:void(0)" class="weui_progress_opr">
+				<i class="weui_icon_cancel"></i>
+			</a>
+		</div>
+		<br>
+		<div class="weui_button_area">
+			<a href="javascript:void(0)" class="weui_btn weui_btn_primary" id="btnStartProgress">上传</a>
+		</div>
+	</div>	
+</body>
+<script type="text/javascript">
+$(document).ready(function(){		
+        $(document).on('click', '#btnStartProgress', function () {
+            if ($(this).hasClass('weui_btn_disabled')) {
+                return;
+            }
+            $(this).addClass('weui_btn_disabled');
+
+            var progress = 0;
+          
+            function next() {
+                $('.js_progress').css({width: progress + '%'});
+                progress = ++progress % 100;
+                setTimeout(next, 30);
+            }
+            next();
+        });
+	});
+</script>
+</html>
